@@ -2,6 +2,7 @@
 title: 'Implementation of MetaGAN: An Adversarial Approach to Few-Shot Learning'
 date: 2020-03-12
 permalink: /posts/2020/03/impl-metagan/
+excerpt: "Humans can recognize objects from a few examples. Having seen a lot of animal images before, given very few images of novel animals, we can recognize them easily. But for deep learning models, we have to train them from scratch to learn a new task."
 tags:
   - Paper Implementation
   - GAN
@@ -9,6 +10,7 @@ tags:
   - Few-Shot Learning
 ---
 
+## Background
 Humans can recognize objects from a few examples. Having seen a lot of animal images before, given very few images of novel animals, we can recognize them easily. But for deep learning models, we have to train them from scratch to learn a new task. Transfer Learning and fine-tuning are some of the techniques to adapt trained models to learn a new task. The problem with them is that such models are trained only on a single task; adapting to a completely new task needs manual verification of similarity between these tasks. One of the recent approaches to this is the concept of meta-learning. The purpose of meta-learning schemes is to share information between the models being trained on similar tasks by using adaptation strategies to extract patterns that are useful for more than one task.
 
 Learning from a small number of samples presents another difficulty for machine learning. The few-shot learning and zero-shot learning frameworks teach models to generalize to new datasets using relatively few samples. A K-shot classification problem, for instance, requires the model to generalize using just K examples: in the extreme case, the model generalizes using zero examples in zero-shot learning.
@@ -25,9 +27,7 @@ What is the gain of using GAN in few-shot meta-learning? In a few-shot classific
 
 |![](/images/blogs/meta_gan.png)|
 |:--:|
-|Fig 2: Decision Boundary with MetaGAN(left) and Decision Boundary without MetaGAN(right).
-Colors represent different classes: gray means fake classes, and green and bluish can be real characters' images from different languages. 
-+ and - means real and fake samples. Source: [MetaGAN Paper](https://papers.nips.cc/paper/2018/hash/4e4e53aa080247bc31d0eb4e7aeb07a0-Abstract.html)|
+|Fig 2: Decision Boundary with MetaGAN(left) and Decision Boundary without MetaGAN(right). Colors represent different classes: gray means fake classes, and green and bluish can be real characters' images from different languages. + and - means real and fake samples. Source: [MetaGAN Paper](https://papers.nips.cc/paper/2018/hash/4e4e53aa080247bc31d0eb4e7aeb07a0-Abstract.html)|
 
 ## Objective
 
