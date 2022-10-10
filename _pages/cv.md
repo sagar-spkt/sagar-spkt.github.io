@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+<!-- Education
 ======
 * B.S. in GitHub, GitHub University, 2012
 * M.S. in Jekyll, GitHub University, 2014
@@ -56,4 +56,6 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vRHVZED6av0XhZDxhjmQXeqaA_2GayYfb1E9QaaA267sIYaXvxgso9xC634FWAPiHzm88zZCQjUfdY6/pub?embedded=true" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
