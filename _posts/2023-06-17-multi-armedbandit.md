@@ -1,11 +1,12 @@
 ---
-title: 'Implmentation and Empirical Analysis of Multi-Armed Bandit Problem'
+title: 'Implementation and Empirical Analysis of Multi-Armed Bandit Problem'
 date: 2023-06-17
 permalink: /posts/2023/06/rl-multiarmed-bandit/
 excerpt: "Welcome to my latest blog post! Today, I am excited to share my recent exploration into the fascinating world of reinforcement learning, specifically focusing on the multi-armed bandit problem and its various solutions. As a foundation for my implementation, I closely followed the insightful book, `Reinforcement Learning: An Introduction` (second edition) by Richard S. Sutton and Andrew G. Barto."
 tags:
   - Reinforcement Learning
   - Multi-Armed Bandit
+  - k-Arm Bandit
   - RL Implementation
   - Action Value Estimation
   - Action Value Exploration
@@ -412,7 +413,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 From the figure, we can see that both constant step size and sample average action value estimation methods shows comparable performance on stationary setting. However, in non-stationary setting, though lower than in stationary setting, the constant step size method performs significantly better than sample average method.
 
-## Optimistic Intial Values
+## Optimistic Initial Values
 
 Optimistic initial values is a technique used in the multi-armed bandit problem to encourage exploration in the early stages of learning. Instead of starting with initial action values set to zero or a neutral value, this approach sets the initial action values to a high, optimistic value, sometimes even higher than the maximum possible reward.
 
