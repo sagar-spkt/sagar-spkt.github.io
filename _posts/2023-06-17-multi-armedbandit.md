@@ -1,5 +1,5 @@
 ---
-title: 'Implmentation of Multi-Armed Bandit Problem'
+title: 'Implmentation and Empirical Analysis of Multi-Armed Bandit Problem'
 date: 2023-06-17
 permalink: /posts/2023/06/rl-multiarmed-bandit/
 excerpt: "Welcome to my latest blog post! Today, I am excited to share my recent exploration into the fascinating world of reinforcement learning, specifically focusing on the multi-armed bandit problem and its various solutions. As a foundation for my implementation, I closely followed the insightful book, `Reinforcement Learning: An Introduction` (second edition) by Richard S. Sutton and Andrew G. Barto."
@@ -15,7 +15,7 @@ tags:
 
 Welcome to my latest blog post! Today, I am excited to share my recent exploration into the fascinating world of reinforcement learning, specifically focusing on the multi-armed bandit problem and its various solutions. As a foundation for my implementation, I closely followed the insightful book, `Reinforcement Learning: An Introduction` (second edition) by Richard S. Sutton and Andrew G. Barto. In this post, I will walk you through my journey, discussing key concepts and algorithms presented in Chapter 2 of the book, while also providing you with code examples and explanations to help you grasp these intriguing topics. So, let's dive into the world of multi-armed bandits and reinforcement learning together!
 
-### Multi-Armed Bandit Problem
+## Multi-Armed Bandit Problem
 
 The Multi-Armed Bandit problem is a classic reinforcement learning challenge that exemplifies the exploration-exploitation tradeoff dilemma. Imagine a gambler(an agent in terms of RL terminology) in front of a row of slot machines, also known as "one-armed bandits." The gambler needs to decide which machines to play, how many times to play each machine, in which order to play them, and whether to continue with the current machine or try a different one. Each machine provides a random reward from a probability distribution specific to that machine, which is unknown to the gambler. The objective is to maximize the sum of rewards earned through a sequence of lever pulls.
 
@@ -36,7 +36,7 @@ matplotlib.rcParams['figure.figsize'] = [20, 5]
 matplotlib.rcParams['axes.prop_cycle'] = matplotlib.cycler(color=['g', 'b', 'r', "y"])
 ```
 
-#### Stationary Multi-Armed Bandit
+## Stationary Multi-Armed Bandit
 
 The simplest setting for the multi-armed bandit problem is when the reward for choosing an arm remains constant over time. In this scenario, each arm has a fixed probability distribution for its rewards, and the gambler's objective remains the same: to maximize the cumulative reward over a series of trials.
 
@@ -126,7 +126,7 @@ print(f"Correct action for run 0: {st_bandit.get_correct_action()[0] + 1}")
     Correct action for run 0: 5
 
 
-#### Agent
+## Agent
 
 An agent in reinforcement learning is an entity that learns the actions that yield the highest reward in the long run. The agent has two primary roles:
 1. acting on the environment based on the current estimate of action values and
@@ -134,7 +134,7 @@ An agent in reinforcement learning is an entity that learns the actions that yie
 
 One of the challenges faced by the agent is the exploration-exploitation dilemma. In this dilemma, the agent must decide whether to explore new actions to gain more knowledge about the environment or exploit its current knowledge to maximize immediate rewards. Striking a balance between exploration and exploitation is critical for the agent's success in the long run, as excessive exploration may lead to suboptimal rewards, while excessive exploitation may prevent the agent from discovering better actions. Various types of agents can be developed based on how they handle this exploration-exploitation trade-off, and in our implementation, we will compare different methods to understand their effectiveness in addressing this challenge.
 
-#### Epsilon Greedy Sample Average Agent
+## Epsilon Greedy Sample Average Agent
 
 The epsilon-greedy sample average method addresses the exploration-exploitation dilemma by choosing between exploration and exploitation randomly. With a probability of `epsilon`, the agent selects a random action for exploration, while with a probability of `1-epsilon`, the agent exploits the current best action based on its estimated action values.
 
@@ -278,7 +278,7 @@ class MultiArmedBanditTestBed:
 
 ```
 
-#### Experiment 1: Greedy Vs $ϵ$-Greedy
+### Experiment 1: Greedy Vs $ϵ$-Greedy
 
 Let's run three agents: greedy, $\epsilon=0.1$-greedy, and $\epsilon=0.01$-greedy agent on the stationary 10-arm bandit environment.
 
@@ -311,7 +311,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 In the plots above, we can clearly see that epsilon greedy agent outperforms the pure greedy agent because greedy agent did no exploration and got stuck on the suboptimal action. On comparing the two epsilon greedy agent, we can see that agent with higher epsilon explored more and got better performance at initial stage. But, the agent with low epsilon value outperforms the agent with high epsilon agent in the long run. This clearly show the challenges of finding the balance between exploration and exploitation.
 
-#### Non-Stationary Multi-Armed Bandit Problem
+## Non-Stationary Multi-Armed Bandit Problem
 
 Let's shift the multi-armed bandit problem a bot towards a realistic full reinforcement learning paradigm. The bandit implemented earlier was stationary as its reward distribution never changed during its lifetime. Let's implement a bandit where the reward distribution changes with steps the agent takes.
 
@@ -330,7 +330,7 @@ class NonStationaryMultiArmedBandit(StationaryMultiArmedBandit):
         return super(NonStationaryMultiArmedBandit, self).get_reward(action)
 ```
 
-#### Experiment 2: Sample Average Action Value Estimation Method on Stationary and Non-Stationary Problem
+### Experiment 2: Sample Average Action Value Estimation Method on Stationary and Non-Stationary Problem
 
 
 ```python
@@ -357,7 +357,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 It is clearly seen that for non stationary bandit problem sample average method falls significantly behind.
 
-#### Epsilon Greedy with Constant Step Size
+## Epsilon Greedy with Constant Step Size
 
 The sample average method gives equal weightage to reward obtain irrespective of the steps in which they were obtained. However, in case of nonstationary setting it makes sense to give more weight to recent rewards than to long-past rewards. One of the most popular ways of doing this is to use a constant step-size parameter.
 
@@ -375,7 +375,7 @@ class EpsilonGreedyAgent(EpsilonGreedySampleAverageAgent):
         return self.alpha
 ```
 
-#### Experiment 3: Epsilon Greedy with Constant Step-Size in Non-Stationary Environment
+### Experiment 3: Epsilon Greedy with Constant Step-Size in Non-Stationary Environment
 
 Let's run experiment with combinations of stationary/non-stationary bandit and sampleaverage/constant step size action value estimation methods.
 
@@ -412,7 +412,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 From the figure, we can see that both constant step size and sample average action value estimation methods shows comparable performance on stationary setting. However, in non-stationary setting, though lower than in stationary setting, the constant step size method performs significantly better than sample average method.
 
-#### Optimistic Intial Values
+## Optimistic Intial Values
 
 Optimistic initial values is a technique used in the multi-armed bandit problem to encourage exploration in the early stages of learning. Instead of starting with initial action values set to zero or a neutral value, this approach sets the initial action values to a high, optimistic value, sometimes even higher than the maximum possible reward.
 
@@ -432,7 +432,7 @@ class OptimisticEpsilonGreedyAgent(EpsilonGreedyAgent):
         self.Q += self.init_q
 ```
 
-#### Experiment 4: Optimistic Pure Greedy vs Epsilon Greedy
+### Experiment 4: Optimistic Pure Greedy vs Epsilon Greedy
 
 
 ```python
@@ -459,7 +459,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 We can see that even with $\epsilon=0$(pure greedy) the agent with optimistic initial values outperforms $\epsilon$-greedy agent in the long run. Initially, it underperforms as it was forced to do exploration because of the optimistic values. Note that there is spike at about the 10th steps. The optimistic greedy policy promotes exploration in the initial steps, as all value estimates are set higher than their true values. This can lead to a scenario where the agent randomly selects the optimal action and then quickly abandons it in favor of other actions that have not been explored yet. This behavior results in a noticeable spike in performance around timestep 10, as the agent is still in the early stages of exploring different actions.
 
-#### Experiment 5: Optimistic Pure Greedy vs Epsilon Greedy on Non-Stationary Setting
+### Experiment 5: Optimistic Pure Greedy vs Epsilon Greedy on Non-Stationary Setting
 
 The experiment above for optimistic initial action values is done in stationary setting. Let's run it in non-stationary setting see what happens.
 
@@ -488,7 +488,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 The experimenation clearly shows the limitation of the trick of using optimistic intial values to force exploration. It is not well suited to nonstationary problems because its drive for exploration is inherently temporary and non-stationary task at every steps creates need for exploration.
 
-#### Experiment 6: Effects of Initial Action Values
+### Experiment 6: Effects of Initial Action Values
 
 Let's run an experiment comparing different initial action value estimate.
 
@@ -517,7 +517,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 It is clear from the figure that the initial action value we choose has effects on beginning steps. With steps, the effect of initial values is lessened. I would like to quote the statements from the book here: "Indeed, any method that focuses on the initial conditions in any special way is unlikely to help with the general nonstationary case. The beginning of time occurs only once, and thus we should not focus on it too much." So, for long one shouldn't worry about the effect of initial action value choosen. But, there are tricks to avoid it and let's explore one.
 
-#### Unbiased Constant Step-Size
+## Unbiased Constant Step-Size
 
 This trick given in the Exercise 2.7 of the Sutton's book deals to avoid the effect of initial action values. The trick is to use step size: $\beta \doteq \alpha /\overline{\omicron }_{n}$ where $
 \overline{\omicron }_{n} \doteq \overline{\omicron }_{n-1} +\alpha ( 1-\overline{\omicron }_{n-1})$ for $n \geq 0$, with $\overline{\omicron}_{0}\doteq0$.
@@ -537,7 +537,7 @@ class UnbiasedEpsilonGreedyAgent(OptimisticEpsilonGreedyAgent):
         return self.alpha / self.step_trace[np.arange(self.runs), action]
 ```
 
-#### Experiment 7: Unbiased Constant Step-Size with Different Initial Action Values
+### Experiment 7: Unbiased Constant Step-Size with Different Initial Action Values
 
 Let's run ubiased constant step-size agent with different inital values.
 
@@ -566,7 +566,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 With this trick, we can see the effect of initial action values is gone. It is because with the unbiased constant step size the step size parameter for the first update will be $1$ which means the agent will ignore the current action value estimate and set the estimate to the current reward it get.
 
-#### Upper-Confidence Bound Action Selection
+## Upper-Confidence Bound Action Selection
 
 In above sections, we're more focused in action value estimation methods. We explored sample average, constant step size and unbiased constant step size methods. Remember that a agent also has to make decision on what action to choose in each step. The greedy method always exploit the action with highest action value estimate it has till the current step, i.e., no exploration. The epsilon greedy method in each steps select the random action with some probability as way of doing exploration. While doing these random selection, equal preference is given not taking care of actions that are better than others.
 
@@ -594,7 +594,7 @@ class UCBActionAgent(EpsilonGreedyAgent):
         )
 ```
 
-#### Experiment 8: UCB vs $\epsilon$-Greedy on Stationary Setting
+### Experiment 8: UCB vs $\epsilon$-Greedy on Stationary Setting
 
 Let's run an experiment comparing epsilon greedy with UCB with various confidence level.
 
@@ -627,7 +627,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 UCB with $C=1$ is performing better than epsilon greedy but we didn't see the imporovement with $C=2$. This is because $C$ controls the degree of exploration, higher the confidence level, higher the degree of exploration.
 
-#### Experiment 9: UCB vs $\epsilon$-Greedy on Non-Stationary Setting
+### Experiment 9: UCB vs $\epsilon$-Greedy on Non-Stationary Setting
 
 Let's run the above experiment in non-stationary setting.
 
@@ -657,7 +657,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 This experiments shows the limitation of UCB in non-stationary setting.
 
-#### Gradient Bandit Algorithms
+## Gradient Bandit Algorithms
 
 Instead of indiscriminately choosing actions or using some uncertainities values for exploring actions, a more sophisticated way is to learn the preference of each action. Agent can do so by using gradient bandit algorithms. Unlike other bandit algorithms that maintain an action-value estimate for each action, gradient bandit algorithms maintain a preference value for each action and use a soft-max distribution to derive the probabilities of selecting each action.
 
@@ -717,7 +717,7 @@ class GradientAgent(EpsilonGreedyAgent):
         self.avg_R += step_size*deltaR
 ```
 
-#### Experiment 10: Gradient Bandit on Stationary Setting
+### Experiment 10: Gradient Bandit on Stationary Setting
 
 
 ```python
@@ -744,7 +744,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
 
 We can see almost 100% improvement in the optimal action selection because of gradient bandit algorithm.
 
-#### Experiment 11: Gradient Bandit on Non-Stationary Setting
+### Experiment 11: Gradient Bandit on Non-Stationary Setting
 
 
 ```python
@@ -773,7 +773,7 @@ The gradient bandit algorithm also struggles in non-stationary setting.
 
 This concludes the blog on multi-armed bandit problems. We implemented and compared various action value estimation and selection algorithms in sationary and non-stationary settings. All experiments showed the inherent challenge of exploitation vs exploration delimma in reinforcement learning.
 
-#### References:
+## References:
 
 *   Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning, second edition: An Introduction. MIT Press.
 
