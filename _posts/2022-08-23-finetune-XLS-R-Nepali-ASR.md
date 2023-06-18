@@ -665,9 +665,9 @@ wer_metric = evaluate.load("wer")
 ```
 
 The model will return a sequence of logit vectors:
-$\mathbf{y}_1, \ldots, \mathbf{y}_m$ with $\mathbf{y}_1 = f_{\theta}(x_1, \ldots, x_n)[0]$ and $n >> m$.
+$$\mathbf{y}_1, \ldots, \mathbf{y}_m$$ with $$\mathbf{y}_1 = f_{\theta}(x_1, \ldots, x_n)[0]$$ and $$n >> m$$.
 
-A logit vector $\mathbf{y}_1$ contains the log-odds for each word in the vocabulary we defined earlier, thus $\text{len}(\mathbf{y}_i) =$ `config.vocab_size`. We are interested in the most likely prediction of the model and thus take the `argmax(...)` of the logits. Also, we transform the encoded labels back to the original string by replacing `LARGE_NEG` with the `pad_token_id` and decoding the ids while making sure that consecutive tokens are **not** grouped to the same token in CTC style ${}^1$.
+A logit vector $$\mathbf{y}_1$$ contains the log-odds for each word in the vocabulary we defined earlier, thus $$\text{len}(\mathbf{y}_i) =$$ `config.vocab_size`. We are interested in the most likely prediction of the model and thus take the `argmax(...)` of the logits. Also, we transform the encoded labels back to the original string by replacing `LARGE_NEG` with the `pad_token_id` and decoding the ids while making sure that consecutive tokens are **not** grouped to the same token in CTC style ${}^1$.
 
 
 ```python

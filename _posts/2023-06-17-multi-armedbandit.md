@@ -279,9 +279,9 @@ class MultiArmedBanditTestBed:
 
 ```
 
-### Experiment 1: Greedy Vs $ϵ$-Greedy
+### Experiment 1: Greedy Vs $$ϵ$$-Greedy
 
-Let's run three agents: greedy, $\epsilon=0.1$-greedy, and $\epsilon=0.01$-greedy agent on the stationary 10-arm bandit environment.
+Let's run three agents: greedy, $$\epsilon=0.1$$-greedy, and $$\epsilon=0.01$$-greedy agent on the stationary 10-arm bandit environment.
 
 
 ```python
@@ -458,7 +458,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
     
 
 
-We can see that even with $\epsilon=0$(pure greedy) the agent with optimistic initial values outperforms $\epsilon$-greedy agent in the long run. Initially, it underperforms as it was forced to do exploration because of the optimistic values. Note that there is spike at about the 10th steps. The optimistic greedy policy promotes exploration in the initial steps, as all value estimates are set higher than their true values. This can lead to a scenario where the agent randomly selects the optimal action and then quickly abandons it in favor of other actions that have not been explored yet. This behavior results in a noticeable spike in performance around timestep 10, as the agent is still in the early stages of exploring different actions.
+We can see that even with $$\epsilon=0$$(pure greedy) the agent with optimistic initial values outperforms $$\epsilon$$-greedy agent in the long run. Initially, it underperforms as it was forced to do exploration because of the optimistic values. Note that there is spike at about the 10th steps. The optimistic greedy policy promotes exploration in the initial steps, as all value estimates are set higher than their true values. This can lead to a scenario where the agent randomly selects the optimal action and then quickly abandons it in favor of other actions that have not been explored yet. This behavior results in a noticeable spike in performance around timestep 10, as the agent is still in the early stages of exploring different actions.
 
 ### Experiment 5: Optimistic Pure Greedy vs Epsilon Greedy on Non-Stationary Setting
 
@@ -520,7 +520,7 @@ It is clear from the figure that the initial action value we choose has effects 
 
 ## Unbiased Constant Step-Size
 
-This trick given in the Exercise 2.7 of the Sutton's book deals to avoid the effect of initial action values. The trick is to use step size: $\beta \doteq \alpha /\overline{\omicron }_{n}$ where $\overline{\omicron }_{n} \doteq \overline{\omicron }_{n-1} +\alpha ( 1-\overline{\omicron }_{n-1})$ for $n \geq 0$, with $\overline{\omicron}_{0}\doteq0$.
+This trick given in the Exercise 2.7 of the Sutton's book deals to avoid the effect of initial action values. The trick is to use step size: $$\beta \doteq \alpha /\overline{\omicron }_{n}$$ where $$\overline{\omicron }_{n} \doteq \overline{\omicron }_{n-1} +\alpha ( 1-\overline{\omicron }_{n-1})$$ for $$n \geq 0$$, with $$\overline{\omicron}_{0}\doteq0$$.
 
 
 ```python
@@ -564,7 +564,7 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
     
 
 
-With this trick, we can see the effect of initial action values is gone. It is because with the unbiased constant step size the step size parameter for the first update will be $1$ which means the agent will ignore the current action value estimate and set the estimate to the current reward it get.
+With this trick, we can see the effect of initial action values is gone. It is because with the unbiased constant step size the step size parameter for the first update will be $$1$$ which means the agent will ignore the current action value estimate and set the estimate to the current reward it get.
 
 ## Upper-Confidence Bound Action Selection
 
@@ -594,7 +594,7 @@ class UCBActionAgent(EpsilonGreedyAgent):
         )
 ```
 
-### Experiment 8: UCB vs $\epsilon$-Greedy on Stationary Setting
+### Experiment 8: UCB vs $$\epsilon$$-Greedy on Stationary Setting
 
 Let's run an experiment comparing epsilon greedy with UCB with various confidence level.
 
@@ -625,9 +625,9 @@ MultiArmedBanditTestBed.run_and_plot_experiments(
     
 
 
-UCB with $C=1$ is performing better than epsilon greedy but we didn't see the imporovement with $C=2$. This is because $C$ controls the degree of exploration, higher the confidence level, higher the degree of exploration.
+UCB with $$C=1$$ is performing better than epsilon greedy but we didn't see the imporovement with $$C=2$$. This is because $$C$$ controls the degree of exploration, higher the confidence level, higher the degree of exploration.
 
-### Experiment 9: UCB vs $\epsilon$-Greedy on Non-Stationary Setting
+### Experiment 9: UCB vs $$\epsilon$$-Greedy on Non-Stationary Setting
 
 Let's run the above experiment in non-stationary setting.
 
