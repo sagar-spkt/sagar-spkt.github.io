@@ -519,8 +519,7 @@ It is clear from the figure that the initial action value we choose has effects 
 
 ## Unbiased Constant Step-Size
 
-This trick given in the Exercise 2.7 of the Sutton's book deals to avoid the effect of initial action values. The trick is to use step size: $\beta \doteq \alpha /\overline{\omicron }_{n}$ where $
-\overline{\omicron }_{n} \doteq \overline{\omicron }_{n-1} +\alpha ( 1-\overline{\omicron }_{n-1})$ for $n \geq 0$, with $\overline{\omicron}_{0}\doteq0$.
+This trick given in the Exercise 2.7 of the Sutton's book deals to avoid the effect of initial action values. The trick is to use step size: $\beta \doteq \alpha /\overline{\omicron }_{n}$ where $\overline{\omicron }_{n} \doteq \overline{\omicron }_{n-1} +\alpha ( 1-\overline{\omicron }_{n-1})$ for $n \geq 0$, with $\overline{\omicron}_{0}\doteq0$.
 
 
 ```python
