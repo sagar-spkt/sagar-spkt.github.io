@@ -58,4 +58,5 @@ Service and leadership
 ======
 * Currently signed in to 43 different slack teams -->
 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vRHVZED6av0XhZDxhjmQXeqaA_2GayYfb1E9QaaA267sIYaXvxgso9xC634FWAPiHzm88zZCQjUfdY6/pub?embedded=true" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+
+<iframe src="https://drive.google.com/file/d/1a1YTsYUs-kyR09eTwDMzKLFKmRCxhuca/preview" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
