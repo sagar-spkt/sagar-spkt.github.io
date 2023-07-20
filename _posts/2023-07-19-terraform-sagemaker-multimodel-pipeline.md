@@ -12,6 +12,24 @@ tags:
   - Model Registry
   - Terraform
 ---
+## Table of Contents
+* [Architecture](#architecture)
+  - [Modeling Pipeline](#modeling-pipeline)
+  - [Deployment Pipeline](#deployment-pipeline)
+* [Implementation](#implementation)
+* [Extending Prebuilt Sagemaker SKLearn Image](#extending-prebuilt-sagemaker-sklearn-image)
+* [ML Modeling Pipeline](#ml-modeling-pipeline)
+  - [Pipeline Definition](#pipeline-definition)
+  - [Preprocessing Step](#preprocessing-step)
+  - [Hyperparameter Tuning With CrossValidation Step](#hyperparameter-tuning-with-crossvalidation-step)
+  - [Refit Best Model:](#refit-best-model)
+  - [Evaluation Step](#evaluation-step)
+  - [Model Registry Step](#model-registry-step)
+* [Deployment Pipeline](#deployment-pipeline-1)
+  - [Deployer Lambda Function](#deployer-lambda-function)
+  - [Invoker Lambda Function](#invoker-lambda-function)
+  - [Multimodel Endpoint](#multimodel-endpoint)
+* [Terraform The Pipeline](#terraform-the-pipeline)
 
 In the ever-growing realm of machine learning, managing complex workflows efficiently is a crucial aspect. One such project that I recently did is a comprehensive, scalable SageMaker pipeline designed for training, deploying, and monitoring multiple models on varying datasets to a single endpoint. Built on the robust Amazon SageMaker platform, this project offers an end-to-end solution for defining and managing machine learning workflows. It covers everything from data preprocessing, model training, tuning, to the final deployment phase. 
 
@@ -25,7 +43,7 @@ Now that we have a high-level understanding of the project, let's dive deeper in
 
 The pipeline of this project is divided into two sections: the Modeling Pipeline and the Deployment Pipeline. Let's delve deeper into the steps involved in each of these sections:
 
-#### Modeling Pipeline
+### Modeling Pipeline
 The Modeling Pipeline is the initial phase where the model is trained and prepared for deployment. Here's what happens in each step:
 
 - **Preprocessing**: The raw data is cleaned and transformed into a suitable format for model training. This step is crucial as quality data is a prerequisite for training an effective model. It involves handling missing values, removing outliers, encoding categorical variables, and so on.
@@ -40,7 +58,7 @@ The Modeling Pipeline is the initial phase where the model is trained and prepar
 
 - **Model Package Registration Step**: If the model passes the registration metric check, it is registered to the SageMaker Model Registry. This registry serves as a repository where trained models are stored before they are deployed.
 
-#### Deployment Pipeline
+### Deployment Pipeline
 The Deployment Pipeline is the second phase where the registered models are deployed for serving predictions.
 
 - The pipeline listens to approval/rejection events in the SageMaker Model Registry via AWS EventBridge. An approval event triggers the deployment of the approved model.
