@@ -19,6 +19,17 @@ The project utilizes the XLSR model, which was pretrained on 128 languages and i
 
 The project demonstrates that the XLSR model can be effectively fine-tuned for ASR tasks in languages other than those it was pretrained on, showcasing its versatility and the effectiveness of cross-lingual speech representations in multilingual ASR tasks.
 
+Model Evaluation
+====
+It achieved the following results on the evaluation set:
+- eval_loss: 0.1767
+- eval_wer: 0.2127
+- eval_runtime: 595.3962
+- eval_samples_per_second: 36.273
+- eval_steps_per_second: 4.535
+- epoch: 6.07
+- step: 23200
+
 Implementation Details
 ====
 Please read my [blog post](https://spktsagar.com/posts/2022/08/finetune-xlsr-nepali/).
