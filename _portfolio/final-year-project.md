@@ -3,6 +3,7 @@ title: "Voice Cloning using Transfer Learning from Speaker Verification to Multi
 excerpt: "Worked on implementing Text Independent Speaker Verification in order to condition the Multispeaker version of Tacotron to synthesize speech of text on the voice of the given person in the wild. Implemented sequence-to-sequence encoder-decoder model based on attention mechanism."
 collection: portfolio
 date: 2020-01-23
+comments: true
 ---
 
 Abstract

@@ -3,6 +3,7 @@ title: 'Critical Analysis: Why do tree-based models still outperform deep learni
 date: 2023-06-11
 permalink: /posts/2023/06/tree-better-than-deeplearning/
 excerpt: "It is an annotated criticism on the paper `Why do tree-based models still outperform deep learning on typical tabular data?`. A personal view on why it was accepted for publication at NEURIPS 2022 is discussed along with a brief description of the key contributions and the significance of the findings presented in the paper. Also, some of the key strengths and weaknesses with this paper, the approach taken by the authors, and the clarity and ease of understanding of the writing are discussed herewith."
+comments: true
 tags:
   - Paper Reading
   - Critics

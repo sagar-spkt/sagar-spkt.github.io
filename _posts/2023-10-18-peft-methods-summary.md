@@ -3,6 +3,7 @@ title: 'PEFT Cheat Sheet: Succinct Explanations to the Numerous PEFT Methods for
 date: 2023-10-18
 permalink: /posts/2023/10/peft-methods-summary/
 excerpt: "Have a quick look into the Parameter-Efficient Fine-Tuning (PEFT) methods for Large Language Models (LLMs) and discover how these techniques are revolutionizing machine learning by optimizing computational resources without compromising performance."
+comments: true
 tags:
   - Large Language Models
   - Machine Learning

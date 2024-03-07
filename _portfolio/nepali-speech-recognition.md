@@ -3,6 +3,7 @@ title: "Nepali Automatic Speech Recognition using Wav2Vec2 Model"
 excerpt: "Worked on finetuning Wav2Vec2 model on OpenSLR’s Nepali ASR dataset. Preprocessed audio dataset with silence removal, voice activity detection, and noise augmentation."
 collection: portfolio
 date: 2022-08-23
+comments: true
 ---
 
 Description

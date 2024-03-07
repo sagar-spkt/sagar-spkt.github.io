@@ -3,6 +3,7 @@ title: 'Implementation and Empirical Analysis of Multi-Armed Bandit Problem'
 date: 2023-06-17
 permalink: /posts/2023/06/rl-multiarmed-bandit/
 excerpt: "Welcome to my latest blog post! Today, I am excited to share my recent exploration into the fascinating world of reinforcement learning, specifically focusing on the multi-armed bandit problem and its various solutions. As a foundation for my implementation, I closely followed the insightful book, `Reinforcement Learning: An Introduction` (second edition) by Richard S. Sutton and Andrew G. Barto."
+comments: true
 tags:
   - Reinforcement Learning
   - Multi-Armed Bandit

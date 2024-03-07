@@ -3,6 +3,7 @@ title: 'Implementation of MetaGAN: An Adversarial Approach to Few-Shot Learning'
 date: 2020-03-12
 permalink: /posts/2020/03/impl-metagan/
 excerpt: "Humans can recognize objects from a few examples. Having seen a lot of animal images before, given very few images of novel animals, we can recognize them easily. But for deep learning models, we have to train them from scratch to learn a new task."
+comments: true
 tags:
   - Paper Implementation
   - GAN

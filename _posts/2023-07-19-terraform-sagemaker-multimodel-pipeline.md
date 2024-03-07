@@ -3,6 +3,7 @@ title: 'Terraform a Scalable Comprehensive Sagemaker MultiModel Pipeline'
 date: 2023-07-19
 permalink: /posts/2023/07/terraform-sagemaker-multimodel-pipeline/
 excerpt: "An end-to-end comprehensive scalable SageMaker pipeline for training, deploying and monitoring multiple models trained on different datasets to a single endpoint."
+comments: true
 tags:
   - Sagemaker
   - MLOps

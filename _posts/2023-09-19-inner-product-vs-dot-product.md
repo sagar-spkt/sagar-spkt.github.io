@@ -3,6 +3,7 @@ title: 'Misnomer Alert: Dot Product and Inner Product are not the Same'
 date: 2023-09-19
 permalink: /posts/2023/09/inner-product-vs-dot-product/
 excerpt: "Have you encountered cases where inner product and dot product are used synonymously? If you have, be alert that inner product and dot product are not same."
+comments: true
 tags:
   - Machine Learning
   - Mathematics

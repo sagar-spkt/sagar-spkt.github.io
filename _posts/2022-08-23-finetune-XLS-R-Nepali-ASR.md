@@ -3,10 +3,13 @@ title: 'Finetuning XLS-R(Wav2Vec2) on OpenSLR Nepali ASR Dataset'
 date: 2022-08-23
 permalink: /posts/2022/08/finetune-xlsr-nepali/
 excerpt: "Wav2Vec2 is a pretrained model for Automatic Speech Recognition (ASR) and was released in September 2020 by Alexei Baevski, Michael Auli, and Alex Conneau.  Soon after the superior performance of Wav2Vec2 was demonstrated on one of the most popular English datasets for ASR, called LibriSpeech, Facebook AI presented a multi-lingual version of Wav2Vec2, called XLSR. XLSR stands for cross-lingual speech representations and refers to model's ability to learn speech representations that are useful across multiple languages."
+comments: true
 tags:
   - Automatics Speech Recognition
   - Wav2Vec2
   - Finetuning
+  - Nepali ASR
+  - Nepali Speech
 ---
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1u8m7Rit7rIgMGT5YyXSXFbcwm9FXo8ob)

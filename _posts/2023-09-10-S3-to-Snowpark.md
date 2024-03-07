@@ -3,6 +3,7 @@ title: 'Defeating The Size: Working with Large Tabular Data on AWS S3 using Snow
 date: 2023-09-10
 permalink: /posts/2023/09/s3-snowflake-snowpark/
 excerpt: "We'll explore the synergy between AWS S3, Snowpark, and Snowflake for efficient handling of large tabular data. By combining these tools, you can seamlessly process and analyze extensive datasets stored in AWS S3."
+comments: true
 tags:
   - AWS S3
   - Snowflake
