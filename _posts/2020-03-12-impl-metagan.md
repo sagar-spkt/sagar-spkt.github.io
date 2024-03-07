@@ -15,7 +15,7 @@ Humans can recognize objects from a few examples. Having seen a lot of animal im
 
 Learning from a small number of samples presents another difficulty for machine learning. The few-shot learning and zero-shot learning frameworks teach models to generalize to new datasets using relatively few samples. A K-shot classification problem, for instance, requires the model to generalize using just K examples: in the extreme case, the model generalizes using zero examples in zero-shot learning.
 
-The model must adapt to new tasks with few instances and training iterations when the context of few-shot learning is added in meta-learning schemes. For example, with the model trained on various languages' handwritten digit recognition tasks, with only a few handwritten examples per alphabet in a completely new language and very few training iterations, the model needs to generalize to that new language. To do this, a series of tasks are used to train the model or learner (character recognition model) during the meta-learning phase (e.g., different language character recognition). Instead of forcing the model or learner to focus on a specific task, we allow them to acquire intrinsic features that are generally applicable to all tasks in the task distribution $P(\mathrm{T})$. Our goal is to identify model parameters (meta-learning phase) that are responsive to task changes such that minor changes in the parameters (adaptation phase) result in significant gains in the loss function for each task taken from $P(\mathrm{T})$.
+The model must adapt to new tasks with few instances and training iterations when the context of few-shot learning is added in meta-learning schemes. For example, with the model trained on various languages' handwritten digit recognition tasks, with only a few handwritten examples per alphabet in a completely new language and very few training iterations, the model needs to generalize to that new language. To do this, a series of tasks are used to train the model or learner (character recognition model) during the meta-learning phase (e.g., different language character recognition). Instead of forcing the model or learner to focus on a specific task, we allow them to acquire intrinsic features that are generally applicable to all tasks in the task distribution $$P(\mathrm{T})$$. Our goal is to identify model parameters (meta-learning phase) that are responsive to task changes such that minor changes in the parameters (adaptation phase) result in significant gains in the loss function for each task taken from $$P(\mathrm{T})$$.
 
 |![](/images/blogs/maml.png)|
 |:--:|
@@ -127,15 +127,15 @@ info  # see the info about omniglot dataset here
 
 Being aware of following few shot learning problem statements(extracted from [MetaGAN paper](http://www.cse.ust.hk/~yqsong/papers/2018-NIPS-MetaGAN-long.pdf)) that helps in dataset preparation for MetaGAN.
 
-Given a distribution of tasks $P(T)$, a sample task $T$ from $P(T)$ is given by a joint distribution $P^T_{X \times Y}(x, y)$,
-where the task is to predict $y$ given $x$. We have a set of training sample tasks $\{T_i\}^N_{i=1}$. Each training sample task $T$ is a tuple $T = (S_T, Q_T)$, where the support set is denoted as $S_T = S^s_T \cup S^u_T$, and the query set is denoted
-as $Q_T = Q^s_T \cup Q^u_T$. The supervised support set $S^s_T = \{(x_1, y_1), (x_2, y_2), \cdots (x_{N×K}, y_{N×K})\}$
-contains $K$ labeled samples from each of the $N$ classes (this is usually known as $K$-shot $N$-way classification). The optional unlabeled support set $S^u_T = \{(x^u_1 , x^u_2 , \cdots x^u_M\}$ contains unlabeled samples from the same set of $N$ classes, which can also be empty in purely supervised cases. $Q^s_T = \{(x_1, y_1), (x_2, y_2), \cdots (x_T, y_T)\}$ is the supervised query dataset. $Q^u_T = \{x_1, x_2, \cdots x_P\}$
+Given a distribution of tasks $$P(T)$$, a sample task $$T$$ from $$P(T)$$ is given by a joint distribution $$P^T_{X \times Y}(x, y)$$,
+where the task is to predict $$y$$ given $$x$$. We have a set of training sample tasks $$\{T_i\}^N_{i=1}$$. Each training sample task $$T$$ is a tuple $$T = (S_T, Q_T)$$, where the support set is denoted as $$S_T = S^s_T \cup S^u_T$$, and the query set is denoted
+as $$Q_T = Q^s_T \cup Q^u_T$$. The supervised support set $$S^s_T = \{(x_1, y_1), (x_2, y_2), \cdots (x_{N×K}, y_{N×K})\}$$
+contains $$K$$ labeled samples from each of the $$N$$ classes (this is usually known as $$K$$-shot $$N$$-way classification). The optional unlabeled support set $$S^u_T = \{(x^u_1 , x^u_2 , \cdots x^u_M\}$$ contains unlabeled samples from the same set of $$N$$ classes, which can also be empty in purely supervised cases. $$Q^s_T = \{(x_1, y_1), (x_2, y_2), \cdots (x_T, y_T)\}$$ is the supervised query dataset. $$Q^u_T = \{x_1, x_2, \cdots x_P\}$$
 is the optional unlabeled query dataset. The objective of the model is to minimize the loss of its predictions on a query set, given the support set as input.
 
 Simply put, for each alphabet in the omniglot dataset, we will keep K-shot(K-support in code) samples in the support set and K-query samples in the query set. Since the omniglot dataset doesn't have any unlabeled samples, we don't need to prepare an unlabeled support set and a query set. Whenever we require an unlabeled set, we will replace it with the corresponding labeled support set and labeled query set. A task is prepared by selecting N classes, each having K-shot support samples and K-query query samples. The support set will be used to fine tune the learner(adaptation), and the query set will be used to evaluate the adapted learner. Accumulated evaluation loss from a query set of a number of tasks will be used to update the learner to the best position from where, with very few gradient updates, the learner can be adapted to a new task.
 
-We will be doing $5$-way, $5$-shot, $15$-query meta learning with 32 tasks for single meta update. Omniglot dataset contains images with size $105 \times 105$  and $3$ channels. We will resize it to $28 \times 28$. All channels in images in Omniglot are same, so we can achieve our objective with single channel only. We will create a task by randomly selecting $5$ labels from the train set, regardless of their alphabets. That means a single task can contain alphabets from different languages.
+We will be doing $$5$$-way, $$5$$-shot, $$15$$-query meta learning with 32 tasks for single meta update. Omniglot dataset contains images with size $$105 \times 105$$  and $$3$$ channels. We will resize it to $$28 \times 28$$. All channels in images in Omniglot are same, so we can achieve our objective with single channel only. We will create a task by randomly selecting $$5$$ labels from the train set, regardless of their alphabets. That means a single task can contain alphabets from different languages.
 
 
 ```python
@@ -436,14 +436,14 @@ def generate_noise(shape):
 
 ### Generator
 
-The generator should be able to generate fake data that is close to real data manifold in specific task $T$. That means we need to condition generator on task basis. For that, we compress the information in the task's support dataset with a dataset encoder $E$ into vector $h_T$, which contains sufficient statistics for the data distribution of task $T$. The task representation vector $h_T$ is than concatenated with noise input $z$ to be input to the generator network. The task encoder contains two modules. The Instance-Encoder encodes each samples and feature aggregation module produce representation vector $h_T$ for the whole training task set by some aggrefation scheme like averaging, max-pooling, etc.
+The generator should be able to generate fake data that is close to real data manifold in specific task $$T$$. That means we need to condition generator on task basis. For that, we compress the information in the task's support dataset with a dataset encoder $$E$$ into vector $$h_T$$, which contains sufficient statistics for the data distribution of task $$T$$. The task representation vector $$h_T$$ is than concatenated with noise input $$z$$ to be input to the generator network. The task encoder contains two modules. The Instance-Encoder encodes each samples and feature aggregation module produce representation vector $$h_T$$ for the whole training task set by some aggrefation scheme like averaging, max-pooling, etc.
 
 ### Implementation of Task Encoder Model.
 
 
 ```python
 class TaskEncoder(tf.keras.Model):
-    """Takes a task $T$ support set and generates a representation vector $h_T$.
+    """Takes a task $$T$$ support set and generates a representation vector $$h_T$$.
     
     Parameters
     ----------
