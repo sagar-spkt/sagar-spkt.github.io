@@ -37,8 +37,9 @@ Please read my [blog post](https://spktsagar.com/posts/2022/08/finetune-xlsr-nep
 Presentation/Demo
 ====
 <iframe
-	src="https://spktsagar-spktsagar-wav2vec2-nepali-asr.hf.space"
+	src="https://spktsagar-nepaliasr.hf.space"
 	frameborder="0"
 	width="100%"
 	height="450"
+	allow="camera https://spktsagar-nepaliasr.hf.space; microphone https://spktsagar-nepaliasr.hf.space"
 ></iframe>
