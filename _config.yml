@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Sagar Sapkota"
 title_separator          : "-"
 name                     : &name "Sagar Sapkota"
-description              : &description "Machine Learning Engineer"
+description              : &description "PhD student in Computer Science at the University of Central Florida"
 url                      : https://spktsagar.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sagar-spkt/sagar-spkt.github.io"
@@ -24,10 +24,10 @@ author:
   avatar           : "profile.png"
   name             : "Sagar Sapkota"
   pronouns         :
-  bio              : "Machine Learning Engineer"
-  location         : "Kavre, Nepal"
-  employer         : "Fusemachines Inc."
-  uri              : # URL
+  bio              : "PhD student in Computer Science at the University of Central Florida"
+  location         : "Orlando, FL, USA"
+  employer         : "University of Central Florida"
+  uri              : "https://spktsagar.com"
   email            : "sagar@spktsagar.com"
 
   # Academic websites
