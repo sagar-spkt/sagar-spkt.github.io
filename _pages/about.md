@@ -7,9 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-Hello! Welcome to my small blogging website. I'm Sagar, a Machine Learning Engineer based in Nepal. Since 2018, I've driven myself into the realm of Machine Learning. I like creating computational intelligence that helps people and machines comprehend the nuances of human languages and data. To date, I've worked on remarkably influential projects: mimicking voice, assisting children's social-emotional growth using conversational agents, extracting valuable details from meeting minutes, and categorizing web content to maximize the relevancy of advertisements, lookalike modeling, to name a few.
+Hello! Welcome to my small blogging website. I’m Sagar, Ph.D. student in Computer Science at the University of Central Florida. I'm interested in making AI socially aware. Since 2018, I've driven myself into the realm of AI and Machine Learning. I like creating computational intelligence that helps people and machines comprehend the nuances of human psychology, languages and data. Over the years, I’ve led and contributed to impactful projects: developing large-scale ad-targeting and content analysis pipelines, designing empathetic chatbots that assist children’s socio-emotional learning, and fine-tuning speech recognition and voice cloning systems for low-resource languages.
 
-My depth-first rather than breadth-first disposition causes me to ponder about a topic for a long time until I understood. This nature matches my given name, Sagar, which translates to Ocean in English. That's why I recommend you be cautious when you see me in front of my laptop and Mr Grumpy; a storm 🌪 might surge into you from the ocean.
+
+My depth-first rather than breadth-first disposition makes me linger on a problem until I truly understand it. This nature fits my name, Sagar, which translates to Ocean in English. So, when you see me in front of my laptop and Mr. Grumpy, be cautious — a storm 🌪 might surge from the ocean.
 
 | ![Mr.Grumpy](/images/mr_grumpy.jpg) |
 |:--:|
