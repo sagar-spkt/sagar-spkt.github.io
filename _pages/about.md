@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello! Welcome to my small blogging website. I’m Sagar, Ph.D. student in Computer Science at the University of Central Florida. I'm interested in making AI socially aware. Since 2018, I've driven myself into the realm of AI and Machine Learning. I like creating computational intelligence that helps people and machines comprehend the nuances of human psychology, languages and data. Over the years, I’ve led and contributed to impactful projects: developing large-scale ad-targeting and content analysis pipelines, designing empathetic chatbots that assist children’s socio-emotional learning, and fine-tuning speech recognition and voice cloning systems for low-resource languages.
+Hello! Welcome to my small blogging website. I’m Sagar, Graduate student in Computer Science at the University of Central Florida. I'm interested in making AI socially aware. Since 2018, I've driven myself into the realm of AI and Machine Learning. I like creating computational intelligence that helps people and machines comprehend the nuances of human psychology, languages and data. Over the years, I’ve led and contributed to impactful projects: developing large-scale ad-targeting and content analysis pipelines, designing empathetic chatbots that assist children’s socio-emotional learning, and fine-tuning speech recognition and voice cloning systems for low-resource languages.
 
 
 My depth-first rather than breadth-first disposition makes me linger on a problem until I truly understand it. This nature fits my name, Sagar, which translates to Ocean in English. So, when you see me in front of my laptop and Mr. Grumpy, be cautious — a storm 🌪 might surge from the ocean.
