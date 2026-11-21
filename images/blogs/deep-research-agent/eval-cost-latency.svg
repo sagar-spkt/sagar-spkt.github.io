@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="Cost and latency, baseline vs prompt v2">
+<rect width="900" height="300" fill="#fcfcfb"/>
+<text x="20" y="28" font-size="17" font-weight="600" fill="#0b0b0b">Cost and latency fell with the prompt fixes (lower is better)</text>
+<rect x="20" y="44" width="12" height="12" rx="3" fill="#eb6834"/>
+<text x="38" y="54" fill="#52514e" font-size="13">Baseline (build 2268548)</text>
+<rect x="250" y="44" width="12" height="12" rx="3" fill="#2a78d6"/>
+<text x="268" y="54" fill="#52514e" font-size="13">Prompt v2 (build 20d6d54)</text>
+<text x="100.0" y="272" font-size="13" fill="#0b0b0b" text-anchor="middle">Agent cost, 20 questions</text>
+<line x1="20" x2="180" y1="250" y2="250" stroke="#52514e" stroke-width="1"/>
+<path d="M55.0,250 V123.56521739130434 Q55.0,119.56521739130434 59.0,119.56521739130434 H95.0 Q99.0,119.56521739130434 99.0,123.56521739130434 V250 Z" fill="#eb6834"/>
+<text x="77.0" y="113.56521739130434" font-size="12.5" fill="#52514e" text-anchor="middle">$0.67</text>
+<path d="M101.0,250 V182.12975492893912 Q101.0,178.12975492893912 105.0,178.12975492893912 H141.0 Q145.0,178.12975492893912 145.0,182.12975492893912 V250 Z" fill="#2a78d6"/>
+<text x="123.0" y="172.12975492893912" font-size="12.5" fill="#52514e" text-anchor="middle">$0.37</text>
+<text x="278.0" y="272" font-size="13" fill="#0b0b0b" text-anchor="middle">Median latency (s)</text>
+<line x1="198" x2="358" y1="250" y2="250" stroke="#52514e" stroke-width="1"/>
+<path d="M233.0,250 V123.56521739130434 Q233.0,119.56521739130434 237.0,119.56521739130434 H273.0 Q277.0,119.56521739130434 277.0,123.56521739130434 V250 Z" fill="#eb6834"/>
+<text x="255.0" y="113.56521739130434" font-size="12.5" fill="#52514e" text-anchor="middle">4.9 s</text>
+<path d="M279.0,250 V144.8606921029281 Q279.0,140.8606921029281 283.0,140.8606921029281 H319.0 Q323.0,140.8606921029281 323.0,144.8606921029281 V250 Z" fill="#2a78d6"/>
+<text x="301.0" y="134.8606921029281" font-size="12.5" fill="#52514e" text-anchor="middle">4.1 s</text>
+<text x="456.0" y="272" font-size="13" fill="#0b0b0b" text-anchor="middle">Slowest question (s)</text>
+<line x1="376" x2="536" y1="250" y2="250" stroke="#52514e" stroke-width="1"/>
+<path d="M411.0,250 V123.56521739130434 Q411.0,119.56521739130434 415.0,119.56521739130434 H451.0 Q455.0,119.56521739130434 455.0,123.56521739130434 V250 Z" fill="#eb6834"/>
+<text x="433.0" y="113.56521739130434" font-size="12.5" fill="#52514e" text-anchor="middle">21.2 s</text>
+<path d="M457.0,250 V188.1673502871206 Q457.0,184.1673502871206 461.0,184.1673502871206 H497.0 Q501.0,184.1673502871206 501.0,188.1673502871206 V250 Z" fill="#2a78d6"/>
+<text x="479.0" y="178.1673502871206" font-size="12.5" fill="#52514e" text-anchor="middle">10.7 s</text>
+<text x="634.0" y="272" font-size="13" fill="#0b0b0b" text-anchor="middle">Model calls, all 20</text>
+<line x1="554" x2="714" y1="250" y2="250" stroke="#52514e" stroke-width="1"/>
+<path d="M589.0,250 V123.56521739130434 Q589.0,119.56521739130434 593.0,119.56521739130434 H629.0 Q633.0,119.56521739130434 633.0,123.56521739130434 V250 Z" fill="#eb6834"/>
+<text x="611.0" y="113.56521739130434" font-size="12.5" fill="#52514e" text-anchor="middle">54</text>
+<path d="M635.0,250 V164.62801932367148 Q635.0,160.62801932367148 639.0,160.62801932367148 H675.0 Q679.0,160.62801932367148 679.0,164.62801932367148 V250 Z" fill="#2a78d6"/>
+<text x="657.0" y="154.62801932367148" font-size="12.5" fill="#52514e" text-anchor="middle">37</text>
+<text x="812.0" y="272" font-size="13" fill="#0b0b0b" text-anchor="middle">Input tokens (K)</text>
+<line x1="732" x2="892" y1="250" y2="250" stroke="#52514e" stroke-width="1"/>
+<path d="M767.0,250 V123.56521739130434 Q767.0,119.56521739130434 771.0,119.56521739130434 H807.0 Q811.0,119.56521739130434 811.0,123.56521739130434 V250 Z" fill="#eb6834"/>
+<text x="789.0" y="113.56521739130434" font-size="12.5" fill="#52514e" text-anchor="middle">794K</text>
+<path d="M813.0,250 V182.047311356916 Q813.0,178.047311356916 817.0,178.047311356916 H853.0 Q857.0,178.047311356916 857.0,182.047311356916 V250 Z" fill="#2a78d6"/>
+<text x="835.0" y="172.047311356916" font-size="12.5" fill="#52514e" text-anchor="middle">438K</text>
+</svg>
